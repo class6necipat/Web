@@ -1416,107 +1416,133 @@ body.dark-mode::-webkit-scrollbar-thumb:hover {
    25. MOBILE
    ========================================================= */
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
     .sidebar {
-        position: static;
+        position: fixed;
 
-        width: 100%;
-        height: auto;
+        top: 0;
+        left: 0;
 
-        flex-direction: row;
+        width: 145px;
+        height: 100vh;
 
-        align-items: center;
+        padding: 15px 8px;
 
-        padding: 10px;
+        flex-direction: column;
 
-        gap: 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
 
-        overflow-x: auto;
-
-        border-right: 0;
-
-        border-bottom:
-            1px solid var(--sidebar-border);
-
-        box-shadow:
-            0 5px 20px rgba(15, 23, 42, 0.1);
-    }
-
-    .sidebar::before {
-        inset: 0 0 auto;
-
-        width: 100%;
-        height: 3px;
-    }
-
-    .sidebar::after {
-        display: none;
+        z-index: 1000;
     }
 
     .logo {
-        flex-shrink: 0;
-
-        padding: 5px;
-
-        margin: 0;
-    }
-
-    .logo::after {
-        display: none;
+        padding: 8px 4px 15px;
+        margin-bottom: 5px;
     }
 
     .logo img {
-        width: 48px;
-        height: 48px;
-
-        border-radius: 12px;
-
-        margin: 0;
+        width: 65px;
+        height: 65px;
     }
 
     .logo p {
-        display: none;
+        font-size: 8px;
     }
 
     .sidebar a {
-        flex-shrink: 0;
+        min-height: 40px;
 
-        min-height: auto;
+        padding: 9px 8px 9px 12px;
 
-        padding: 10px 13px;
-
-        border-radius: 9px;
-
-        font-size: 13px;
-
-        white-space: nowrap;
+        font-size: 12px;
     }
 
     #theme-toggle {
-        flex-shrink: 0;
+        margin-top: 10px;
 
-        width: auto;
+        padding: 9px 6px;
 
-        margin: 0;
-
-        white-space: nowrap;
+        font-size: 12px;
     }
 
-    .jam-digital,
+    .jam-digital {
+        padding: 12px 5px;
+
+        font-size: 18px;
+    }
+
     .tanggal-digital {
-        display: none;
+        font-size: 10px;
     }
+
+
+    /* =========================
+       RUANG SIDEBAR + TOGGLE
+       ========================= */
 
     .content {
-        margin-left: 0;
+        width: auto !important;
 
-        padding: 20px;
+        margin-left: 195px !important;
+
+        padding: 70px 12px 25px !important;
+
+        max-width: none !important;
     }
 
-    section {
-        padding: 50px 0;
+    body.sidebar-hidden .content {
+        margin-left: 0 !important;
     }
+
+
+    /* =========================
+       TOGGLE
+       ========================= */
+
+    #sidebar-toggle {
+        position: fixed;
+
+        top: 12px;
+        left: 157px;
+
+        width: 42px;
+        height: 42px;
+
+        z-index: 1100;
+    }
+
+    .sidebar.hidden + #sidebar-toggle {
+        left: 12px;
+    }
+
+
+    /* =========================
+       SEMUA GRID JADI 1 KOLOM
+       ========================= */
+
+    .home-info,
+    .jadwal-container,
+    .siswa {
+        grid-template-columns: 1fr !important;
+
+        width: 100%;
+    }
+
+    .tugas-card,
+    .pengumuman-card {
+        width: 100%;
+    }
+
+
+    /* =========================
+       UKURAN MOBILE
+       ========================= */
 
     .home {
         min-height: auto;
@@ -1524,49 +1550,22 @@ body.dark-mode::-webkit-scrollbar-thumb:hover {
 
     .home h1 {
         font-size: 30px;
+        line-height: 1.15;
     }
 
     .home > p {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 40px 0;
     }
 
     section h1 {
-        font-size: 26px;
-    }
-
-    .home-info,
-    .jadwal-container,
-    .siswa {
-        grid-template-columns: 1fr;
-    }
-
-    .random-picker {
-        padding: 35px 20px;
-
-        border-radius: 20px;
-    }
-
-    #hasil-random {
-        font-size: 22px;
-    }
-
-    #tombol-random {
-        width: 100%;
-
-        padding: 13px 20px;
-    }
-
-    .modal {
-        padding: 15px;
-    }
-
-    .modal-content {
-        width: 100%;
-
-        padding: 25px 20px;
+        font-size: 27px;
     }
 }
-
 
 /* =========================================================
    26. REDUCED MOTION
@@ -1654,4 +1653,54 @@ body.dark-mode::-webkit-scrollbar-thumb:hover {
 
 body.sidebar-hidden .content {
     margin-left: 45px;
+}
+
+/* ===== MOBILE FINAL ===== */
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: fixed;
+        width: 150px;
+        height: 100vh;
+        padding: 15px 8px;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 1000;
+    }
+
+.content {
+    margin-left: 195px !important;
+    width: calc(100% - 180px) !important;
+    padding: 70px 12px 25px !important;
+    transition: 0.3s ease;
+}
+
+.sidebar.hidden + #sidebar-toggle ~ .content {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+    .home-info,
+    .jadwal-container,
+    .siswa {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+    }
+
+    .tugas-card,
+    .pengumuman-card {
+        width: 100%;
+    }
+
+    #sidebar-toggle {
+        position: fixed;
+        top: 15px;
+        left: 165px;
+        z-index: 1100;
+    }
+
+    .sidebar.hidden + #sidebar-toggle {
+        left: 15px;
+    }
 }
