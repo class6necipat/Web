@@ -1670,7 +1670,7 @@ body.sidebar-hidden .content {
     }
 
 .content {
-    margin-left: 195px !important;
+    margin-left: 170px !important;
     width: calc(100% - 180px) !important;
     padding: 70px 12px 25px !important;
     transition: 0.3s ease;
