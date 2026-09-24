@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Kelas VI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    
+
+    <!-- Sidebar -->
+
+    <nav class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <img src="04-fotokelas.jpeg" alt="fotokelas">
+            <p>KELAS VI NECIPAT</p>
+        </div>
+
+        <a href="#home">Home</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#siswa">Siswa</a>
+        <a href="#tugas">Tugas</a>
+        <a href="#pengumuman">Pengumuman</a>
+        <a href="#fun-games">Fun Games</a>
+
+        <button id="theme-toggle">🌙 Mode Gelap</button>
+
+        <div class="jam-digital" id="jam-digital">00:00:00</div>
+        <div class="tanggal-digital" id="tanggal-digital" >1 januari 1111</div>
+    </nav>
+
+    <button id="sidebar-toggle">☰</button>
+
+
+    <!-- Konten Utama -->
+    <main class="content">
+
+        <!-- HOME -->
+        <section id="home" class="home">
+            <h1>Selamat Datang di Web Kelas VI</h1>
+
+            <p>
+                Selamat datang di website kelas VI.
+                Di sini kamu bisa melihat informasi siswa,
+                jadwal pelajaran, tugas, dan pengumuman kelas.
+            </p>
+
+            <div class="home-info">
+
+                <div class="info-card">
+                    <h2>Siswa</h2>
+                    <p>Daftar siswa kelas VI.</p>
+                    <a href="#siswa">Lihat Siswa</a>
+                </div>
+
+                <div class="info-card">
+                    <h2>Jadwal</h2>
+                    <p>Lihat jadwal pelajaran setiap hari.</p>
+                    <a href="#jadwal">Lihat Jadwal</a>
+                </div>
+
+                <div class="info-card">
+                    <h2>Tugas</h2>
+                    <p>Lihat tugas yang diberikan guru.</p>
+                    <a href="#tugas">Lihat Tugas</a>
+                </div>
+
+                <div class="info-card">
+                    <h2>Pengumuman</h2>
+                    <p>Lihat informasi terbaru dari kelas.</p>
+                    <a href="#pengumuman">Lihat Pengumuman</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- JADWAL -->
+        <section id="jadwal">
+
+            <h1>Jadwal Pelajaran</h1>
+
+            <div class="jadwal-container">
+
+                <div class="senin">
+                    <h2>Senin</h2>
+                    <p>
+                        IPAS<br>
+                        Pancasila
+                    </p>
+                </div>
+
+                <div class="selasa">
+                    <h2>Selasa</h2>
+                    <p>
+                        PABP<br>
+                        Bhs. Indonesia<br>
+                        IPAS<br>
+                        Litnum
+                    </p>
+                </div>
+
+                <div class="rabu">
+                    <h2>Rabu</h2>
+                    <p>
+                        Matematika<br>
+                        Seni Budaya<br>
+                        Mulok
+                    </p>
+                </div>
+
+                <div class="kamis">
+                    <h2>Kamis</h2>
+                    <p>
+                        Bhs. Indonesia<br>
+                        IPAS<br>
+                        Matematika
+                    </p>
+                </div>
+
+                <div class="jumat">
+                    <h2>Jumat</h2>
+                    <p>
+                        Pembiasaan<br>
+                        PJOK<br>
+                        Kokurikuler
+                    </p>
+                </div>
+
+                <div class="sabtu">
+                    <h2>Sabtu</h2>
+                    <p>
+                        Litnum<br>
+                        Bhs. Inggris<br>
+                        Bhs. Jawa ; Sunda<br>
+                        Kokurikuler
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SISWA -->
+        <section id="siswa">
+
+            <h1>Daftar Siswa</h1>
+
+            <div class="siswa">
+
+                <div class="fadil">
+                    <h2>Abid Fadil Abyan</h2>
+                    <button id="buka-modal-fadil">Info lanjutan</button>
+                </div>
+
+                <div class="adzkia">
+                    <h2>Adzkia Samha Nur Saufa</h2>
+                    <button id="buka-modal-adzkia">Info lanjutan</button>
+                </div>
+
+                <div class="alifa">
+                    <h2>Alifa Zahra Fauzia</h2>
+                    <button id="buka-modal-alifa">Info lanjutan</button>
+                </div>
+
+                <div class="allea">
+                    <h2>Allea Carisa Putri</h2>
+                    <button id="buka-modal-allea">Info lanjutan</button>
+                </div>
+
+                <div class="amora">
+                    <h2>Amora Siti Maryam</h2>
+                    <button id="buka-modal-amora">Info lanjutan</button>
+                </div>
+
+                <div class="avika">
+                    <h2>Avika Mutiara Ramadhani</h2>
+                    <button id="buka-modal-avika">Info lanjutan</button>
+                </div>
+
+                <div class="davina">
+                    <h2>Davina Alifatul Zahra</h2>
+                    <button id="buka-modal-davina">Info lanjutan</button>
+                </div>
+
+                <div class="byan">
+                    <h2>Dzubyanul Arif Bililmi</h2>
+                    <button id="buka-modal-byan">Info lanjutan</button>
+                </div>
+
+                <div class="kaila">
+                    <h2>Kaila Nur Angreani</h2>
+                    <button id="buka-modal-kaila">Info lanjutan</button>
+                </div>
+
+                <div class="alif">
+                    <h2>Muhammad Alif Syaputra</h2>
+                    <button id="buka-modal-alif">Info lanjutan</button>
+                </div>
+
+                <div class="agis">
+                    <h2>Naurilidiana Agista Rizky</h2>
+                    <button id="buka-modal-agis">Info lanjutan</button>
+                </div>
+
+                <div class="sckar">
+                    <h2>Sckar Maulidiana Ardiansyah</h2>
+                    <button id="buka-modal-sckar">Info lanjutan</button>
+                </div>
+
+                <div class="hani">
+                    <h2>Tihani Queensha Permata</h2>
+                    <button id="buka-modal-hani">Info lanjutan</button>
+                </div>
+
+                <div class="wingka">
+                    <h2>wingka blablabla</h2>
+                    <button id="buka-modal-wingka">Info lanjutan</button>
+                </div>
+
+                <div class="zahran">
+                    <h2>Zahran Al Saidan</h2>
+                    <button id="buka-modal-zahran">Info lanjutan</button>
+                </div>
+
+                <div class="adibah">
+                    <h2>Adibah Asila</h2>
+                    <button id="buka-modal-adibah">Info lanjutan</button>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!--MODAL-->
+
+        <div class="modal" id="modal-fadil">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-fadil">X</button>
+
+                <h2>Fadil Abid Abyan</h2>
+
+                <p>Nama: Abid Fadil Abyan</p>
+                <p>Jabatan: Murid biasa</p>
+                <p>Hobi: Voli</p>
+                <p>Kata-Kata: "Voli gud gud"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-adzkia">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-adzkia">X</button>
+
+                <h2>Adzkia Samha Nur Saufa</h2>
+
+                <p>Nama: Adzkia Samha Nur Saufa</p>
+                <p>Jabatan: Murid biasa</p>
+                <p>Hobi: Voli</p>
+                <p>Kata-Kata: "bngke"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-alifa">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-alifa">X</button>
+
+                <h2>Alifa Zahra Fauzia</h2>
+
+                <p>Nama: Alifa Zahra Fauzia</p>
+                <p>Jabatan: Murid biasa</p>
+                <p>Hobi: Voli</p>
+                <p>Kata-Kata: "anjay"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-allea">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-allea">X</button>
+
+                <h2>Allea Carisa Putri</h2>
+
+                <p>Nama: Allea Carisa Putri</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-amora">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-amora">X</button>
+
+                <h2>Amora Siti Maryam</h2>
+
+                <p>Nama: Amora Siti Maryam</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-avika">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-avika">X</button>
+
+                <h2>Avika Mutiara Ramadhani</h2>
+
+                <p>Nama: Avika Mutiara Ramadhani</p>
+                <p>Jabatan: Bendahara 1</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-davina">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-davina">X</button>
+
+                <h2>Davina Alifatu Zahra</h2>
+
+                <p>Nama: Davina Alifatu Zahra</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-byan">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-byan">X</button>
+
+                <h2>Dzubyanul Arif bililmi</h2>
+
+                <p>Nama: Dzubyanul Arif Bililmi</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-kaila">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-kaila">X</button>
+
+                <h2>Kaila Nur Anggreani</h2>
+
+                <p>Nama: Kaila Nur Aggreani</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-alif">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-alif">X</button>
+
+                <h2>Muhammad Alif Syaputri</h2>
+
+                <p>Nama: Muhammad Alif Syaputra</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-agis">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-agis">X</button>
+
+                <h2>Naurilidiana Agista Rizky</h2>
+
+                <p>Nama: Naurilidiana Agista Rizky</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-sckar">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-sckar">X</button>
+
+                <h2>Sckar Maulidiana Ardiansyah</h2>
+
+                <p>Nama: Sckar Maulidiana Ardiansyah</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-hani">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-hani">X</button>
+
+                <h2>Tihani Queensha Permata</h2>
+
+                <p>Nama: Tihani Queensha Permata</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-wingka">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-wingka">X</button>
+
+                <h2>wingka</h2>
+
+                <p>Nama: -</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-zahran">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-zahran">X</button>
+
+                <h2>Zahran Al Saidan</h2>
+
+                <p>Nama: Zahran Al Saidan</p>
+                <p>Jabatan: Wakil Ketua Kelas</p>
+                <p>Hobi: Apapun itu yang seru</p>
+                <p>Kata-Kata: "Wug wug"</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-adibah">
+            <div class="modal-content">
+
+                <button class="modal-close" id="tutup-modal-adibah">X</button>
+
+                <h2>Adibah Asila</h2>
+
+                <p>Nama: Adibah Asila</p>
+                <p>Jabatan: -</p>
+                <p>Hobi: -</p>
+                <p>Kata-Kata: "-"</p>
+            </div>
+        </div>
+
+        <!-- TUGAS -->
+        <section id="tugas">
+
+            <h1>Tugas</h1>
+
+            <div class="tugas-card">
+                <p>B.Inggris Hal.15</p>
+            </div>
+
+            <div class="tugas-card">
+                <p>IPAS hal.51 (dilanjut)</p>
+            </div>
+
+            <div class="tugas-card">
+                <p>Matematika Sumatif tengah semester (dilanjut)</p>
+            </div>
+
+        </section>
+
+
+        <!-- PENGUMUMAN -->
+        <section id="pengumuman">
+
+            <h1>Pengumuman</h1>
+
+            <div class="pengumuman-card">
+                <p>Belum ada pengumuman!</p>
+            </div>
+
+        </section>
+
+        <!--Fun Games-->
+        <Section id="fun-games">
+            <h1>Fun games</h1>
+
+            <div class="random-picker">
+                <h2 id="judul-RP">Random Picker!</h2>
+                <button id="tombol-random">Pilih Siswa</button>
+                <h2 id="hasil-random">-</h2>
+            </div>
+        </Section>
+
+        <div class="bottom">
+            <p>Mentok!, Gausah scroll lagi!</p>
+        </div>
+    </main>
+</body>
+
+</html>
