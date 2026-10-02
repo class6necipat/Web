@@ -12,6 +12,16 @@ tomboltutupfadil.addEventListener("click", function () {
     modalfadil.classList.remove("active")
 });
 
+modalfadil.addEventListener("click", function (event) {
+
+    if (event.target === modalfadil) {
+
+        modalfadil.classList.remove("active");
+
+    }
+
+});
+
 //modal adzkia
 
 let tombolbukaadzkia = document.getElementById("buka-modal-adzkia");
@@ -24,6 +34,16 @@ tombolbukaadzkia.addEventListener("click", function () {
 
 tomboltutupadzkia.addEventListener("click", function () {
     modaladzkia.classList.remove("active")
+});
+
+modaladzkia.addEventListener("click", function (event) {
+
+    if (event.target === modaladzkia) {
+
+        modaladzkia.classList.remove("active");
+
+    }
+
 });
 
 //modal alifa
@@ -40,6 +60,16 @@ tomboltutupalifa.addEventListener("click", function () {
     modalalifa.classList.remove("active")
 });
 
+modalalifa.addEventListener("click", function (event) {
+
+    if (event.target === modalalifa) {
+
+        modalalifa.classList.remove("active");
+
+    }
+
+});
+
 //modal allea
 
 let tombolbukaallea = document.getElementById("buka-modal-allea");
@@ -52,6 +82,16 @@ tombolbukaallea.addEventListener("click", function () {
 
 tomboltutupallea.addEventListener("click", function () {
     modalallea.classList.remove("active")
+});
+
+modalallea.addEventListener("click", function (event) {
+
+    if (event.target === modalallea) {
+
+        modalallea.classList.remove("active");
+
+    }
+
 });
 
 //modal amora
@@ -68,6 +108,16 @@ tomboltutupamora.addEventListener("click", function () {
     modalamora.classList.remove("active")
 });
 
+modalamora.addEventListener("click", function (event) {
+
+    if (event.target === modalamora) {
+
+        modalamora.classList.remove("active");
+
+    }
+
+});
+
 //modal avika
 
 let tombolbukaavika = document.getElementById("buka-modal-avika");
@@ -80,6 +130,16 @@ tombolbukaavika.addEventListener("click", function () {
 
 tomboltutupavika.addEventListener("click", function () {
     modalavika.classList.remove("active")
+});
+
+modalavika.addEventListener("click", function (event) {
+
+    if (event.target === modalavika) {
+
+        modalavika.classList.remove("active");
+
+    }
+
 });
 
 //modal davina
@@ -96,6 +156,16 @@ tomboltutupdavina.addEventListener("click", function () {
     modaldavina.classList.remove("active")
 });
 
+modaldavina.addEventListener("click", function (event) {
+
+    if (event.target === modaldavina) {
+
+        modaldavina.classList.remove("active");
+
+    }
+
+});
+
 //modal byan
 
 let tombolbukabyan = document.getElementById("buka-modal-byan");
@@ -108,6 +178,16 @@ tombolbukabyan.addEventListener("click", function () {
 
 tomboltutupbyan.addEventListener("click", function () {
     modalbyan.classList.remove("active")
+});
+
+modalbyan.addEventListener("click", function (event) {
+
+    if (event.target === modalbyan) {
+
+        modalbyan.classList.remove("active");
+
+    }
+
 });
 
 //modal kaila
@@ -124,6 +204,16 @@ tomboltutupkaila.addEventListener("click", function () {
     modalkaila.classList.remove("active")
 });
 
+modalkaila.addEventListener("click", function (event) {
+
+    if (event.target === modalkaila) {
+
+        modalkaila.classList.remove("active");
+
+    }
+
+});
+
 //modal alif
 
 let tombolbukaalif = document.getElementById("buka-modal-alif");
@@ -136,6 +226,16 @@ tombolbukaalif.addEventListener("click", function () {
 
 tomboltutupalif.addEventListener("click", function () {
     modalalif.classList.remove("active")
+});
+
+modalalif.addEventListener("click", function (event) {
+
+    if (event.target === modalalif) {
+
+        modalalif.classList.remove("active");
+
+    }
+
 });
 
 //modal agis
@@ -152,6 +252,16 @@ tomboltutupagis.addEventListener("click", function () {
     modalagis.classList.remove("active")
 });
 
+modalagis.addEventListener("click", function (event) {
+
+    if (event.target === modalagis) {
+
+        modalagis.classList.remove("active");
+
+    }
+
+});
+
 //modal sckar
 
 let tombolbukasckar = document.getElementById("buka-modal-sckar");
@@ -164,6 +274,26 @@ tombolbukasckar.addEventListener("click", function () {
 
 tomboltutupsckar.addEventListener("click", function () {
     modalsckar.classList.remove("active")
+});
+
+modalsckar.addEventListener("click", function (event) {
+
+    if (event.target === modalsckar) {
+
+        modalsckar.classList.remove("active");
+
+    }
+
+});
+
+modalsckar.addEventListener("click", function (event) {
+
+    if (event.target === modalsckar) {
+
+        modalsckar.classList.remove("active");
+
+    }
+
 });
 
 //modal hani
@@ -180,6 +310,16 @@ tomboltutuphani.addEventListener("click", function () {
     modalhani.classList.remove("active")
 });
 
+modalhani.addEventListener("click", function (event) {
+
+    if (event.target === modalhani) {
+
+        modalhani.classList.remove("active");
+
+    }
+
+});
+
 //modal wingka
 
 let tombolbukawingka = document.getElementById("buka-modal-wingka");
@@ -192,6 +332,16 @@ tombolbukawingka.addEventListener("click", function () {
 
 tomboltutupwingka.addEventListener("click", function () {
     modalwingka.classList.remove("active")
+});
+
+modalwingka.addEventListener("click", function (event) {
+
+    if (event.target === modalwingka) {
+
+        modalwingka.classList.remove("active");
+
+    }
+
 });
 
 //modal zahran
@@ -208,6 +358,16 @@ tomboltutupzahran.addEventListener("click", function () {
     modalzahran.classList.remove("active")
 });
 
+modalzahran.addEventListener("click", function (event) {
+
+    if (event.target === modalzahran) {
+
+        modalzahran.classList.remove("active");
+
+    }
+
+});
+
 //modal adibah
 
 let tombolbukaadibah = document.getElementById("buka-modal-adibah");
@@ -220,6 +380,16 @@ tombolbukaadibah.addEventListener("click", function () {
 
 tomboltutupadibah.addEventListener("click", function () {
     modaladibah.classList.remove("active")
+});
+
+modaladibah.addEventListener("click", function (event) {
+
+    if (event.target === modaladibah) {
+
+        modaladibah.classList.remove("active");
+
+    }
+
 });
 
 // jam digital
