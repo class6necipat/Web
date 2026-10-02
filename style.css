@@ -77,7 +77,6 @@ img {
     background: rgba(34, 211, 238, 0.22);
 }
 
-
 /* =========================================================
    02. COLOR SYSTEM
    ========================================================= */
@@ -615,15 +614,6 @@ body.dark-mode {
     transition:
         margin-left 0.35s ease,
         width 0.35s ease;
-}
-
-body.sidebar-hidden .content {
-    margin-left: 0;
-
-    width: 100%;
-
-    padding-left:
-        11px;
 }
 
 
@@ -2365,4 +2355,26 @@ a:focus-visible {
     font-size: 8px;
 
     font-weight: 700;
+}
+
+/* =========================================================
+   SIDEBAR OPEN = CONTENT MENYEMPIT
+   ========================================================= */
+
+.content {
+    width: 100%;
+    margin-left: 0;
+
+    transition:
+        width 0.35s ease,
+        margin-left 0.35s ease;
+}
+
+@media (min-width: 700px) {
+
+    body.sidebar-open .content {
+        width: calc(100% - 270px);
+        margin-left: 270px;
+    }
+
 }

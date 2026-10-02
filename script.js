@@ -323,24 +323,30 @@ tomboltheme.addEventListener("click", function(){
 //sidebar-close
 
 let sidebar = document.getElementById("sidebar");
+
 let tombolsidebar = document.getElementById("sidebar-toggle");
 
 tombolsidebar.addEventListener("click", function () {
+
     sidebar.classList.toggle("hidden");
-    document.body.classList.toggle("sidebar-hidden");
+    document.body.classList.toggle("sidebar-open");
+
 });
 
 document.addEventListener("click", function (event) {
+
     if (
         !sidebar.contains(event.target) &&
-        event.target !== tombolsidebar &&
+        !tombolsidebar.contains(event.target) &&
         !sidebar.classList.contains("hidden")
     ) {
-        sidebar.classList.toggle("hidden");
-        document.body.classList.toggle("sidebar-hidden");
-    }
-});
 
+        sidebar.classList.add("hidden");
+        document.body.classList.remove("sidebar-open");
+
+    }
+
+});
 
 // COUNTDOWN
 
