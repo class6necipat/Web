@@ -9,7 +9,7 @@ tombolbukafadil.addEventListener("click", function () {
 });
 
 tomboltutupfadil.addEventListener("click", function () {
-    modalfadil.classList.remove("active") = "none";
+    modalfadil.classList.remove("active")
 });
 
 //modal adzkia
@@ -23,7 +23,7 @@ tombolbukaadzkia.addEventListener("click", function () {
 });
 
 tomboltutupadzkia.addEventListener("click", function () {
-    modaladzkia.classList.remove("active") = "none";
+    modaladzkia.classList.remove("active")
 });
 
 //modal alifa
@@ -37,7 +37,7 @@ tombolbukaalifa.addEventListener("click", function () {
 });
 
 tomboltutupalifa.addEventListener("click", function () {
-    modalalifa.classList.remove("active") = "none";
+    modalalifa.classList.remove("active")
 });
 
 //modal allea
@@ -51,7 +51,7 @@ tombolbukaallea.addEventListener("click", function () {
 });
 
 tomboltutupallea.addEventListener("click", function () {
-    modalallea.classList.remove("active") = "none";
+    modalallea.classList.remove("active")
 });
 
 //modal amora
@@ -65,7 +65,7 @@ tombolbukaamora.addEventListener("click", function () {
 });
 
 tomboltutupamora.addEventListener("click", function () {
-    modalamora.classList.remove("active") = "none";
+    modalamora.classList.remove("active")
 });
 
 //modal avika
@@ -79,7 +79,7 @@ tombolbukaavika.addEventListener("click", function () {
 });
 
 tomboltutupavika.addEventListener("click", function () {
-    modalavika.classList.remove("active") = "none";
+    modalavika.classList.remove("active")
 });
 
 //modal davina
@@ -93,7 +93,7 @@ tombolbukadavina.addEventListener("click", function () {
 });
 
 tomboltutupdavina.addEventListener("click", function () {
-    modaldavina.classList.remove("active") = "none";
+    modaldavina.classList.remove("active")
 });
 
 //modal byan
@@ -107,7 +107,7 @@ tombolbukabyan.addEventListener("click", function () {
 });
 
 tomboltutupbyan.addEventListener("click", function () {
-    modalbyan.classList.remove("active") = "none";
+    modalbyan.classList.remove("active")
 });
 
 //modal kaila
@@ -121,7 +121,7 @@ tombolbukakaila.addEventListener("click", function () {
 });
 
 tomboltutupkaila.addEventListener("click", function () {
-    modalkaila.classList.remove("active") = "none";
+    modalkaila.classList.remove("active")
 });
 
 //modal alif
@@ -135,7 +135,7 @@ tombolbukaalif.addEventListener("click", function () {
 });
 
 tomboltutupalif.addEventListener("click", function () {
-    modalalif.classList.remove("active") = "none";
+    modalalif.classList.remove("active")
 });
 
 //modal agis
@@ -149,7 +149,7 @@ tombolbukaagis.addEventListener("click", function () {
 });
 
 tomboltutupagis.addEventListener("click", function () {
-    modalagis.classList.remove("active") = "none";
+    modalagis.classList.remove("active")
 });
 
 //modal sckar
@@ -163,7 +163,7 @@ tombolbukasckar.addEventListener("click", function () {
 });
 
 tomboltutupsckar.addEventListener("click", function () {
-    modalsckar.classList.remove("active") = "none";
+    modalsckar.classList.remove("active")
 });
 
 //modal hani
@@ -177,7 +177,7 @@ tombolbukahani.addEventListener("click", function () {
 });
 
 tomboltutuphani.addEventListener("click", function () {
-    modalhani.classList.remove("active") = "none";
+    modalhani.classList.remove("active")
 });
 
 //modal wingka
@@ -191,7 +191,7 @@ tombolbukawingka.addEventListener("click", function () {
 });
 
 tomboltutupwingka.addEventListener("click", function () {
-    modalwingka.classList.remove("active") = "none";
+    modalwingka.classList.remove("active")
 });
 
 //modal zahran
@@ -205,7 +205,7 @@ tombolbukazahran.addEventListener("click", function () {
 });
 
 tomboltutupzahran.addEventListener("click", function () {
-    modalzahran.classList.remove("active") = "none";
+    modalzahran.classList.remove("active")
 });
 
 //modal adibah
@@ -219,7 +219,7 @@ tombolbukaadibah.addEventListener("click", function () {
 });
 
 tomboltutupadibah.addEventListener("click", function () {
-    modaladibah.classList.remove("active") = "none";
+    modaladibah.classList.remove("active")
 });
 
 // jam digital
@@ -322,10 +322,81 @@ tomboltheme.addEventListener("click", function(){
 
 //sidebar-close
 
-let sidebar = document.getElementById("sidebar")
-let tombolsidebar = document.getElementById("sidebar-toggle")
+let sidebar = document.getElementById("sidebar");
+let tombolsidebar = document.getElementById("sidebar-toggle");
 
-tombolsidebar.addEventListener("click", function(){
+tombolsidebar.addEventListener("click", function () {
     sidebar.classList.toggle("hidden");
     document.body.classList.toggle("sidebar-hidden");
 });
+
+document.addEventListener("click", function (event) {
+    if (
+        !sidebar.contains(event.target) &&
+        event.target !== tombolsidebar &&
+        !sidebar.classList.contains("hidden")
+    ) {
+        sidebar.classList.toggle("hidden");
+        document.body.classList.toggle("sidebar-hidden");
+    }
+});
+
+
+// COUNTDOWN
+
+
+const targetDate = new Date("2026-12-31T23:59:59").getTime();
+
+function updateCountdown() {
+
+    const sekarang = new Date().getTime();
+
+    const selisih = targetDate - sekarang;
+
+    const hari = Math.floor(
+        selisih / (1000 * 60 * 60 * 24)
+    );
+
+    const jam = Math.floor(
+        (selisih / (1000 * 60 * 60)) % 24
+    );
+
+    const menit = Math.floor(
+        (selisih / (1000 * 60)) % 60
+    );
+
+    const detik = Math.floor(
+        (selisih / 1000) % 60
+    );
+
+    document.getElementById("countdown-days").textContent =
+        String(hari).padStart(2, "0");
+
+    document.getElementById("countdown-hours").textContent =
+        String(jam).padStart(2, "0");
+
+    document.getElementById("countdown-minutes").textContent =
+        String(menit).padStart(2, "0");
+
+    document.getElementById("countdown-seconds").textContent =
+        String(detik).padStart(2, "0");
+
+    if (selisih <= 0) {
+
+        clearInterval(countdownInterval);
+
+        document.getElementById("countdown-days").textContent = "00";
+        document.getElementById("countdown-hours").textContent = "00";
+        document.getElementById("countdown-minutes").textContent = "00";
+        document.getElementById("countdown-seconds").textContent = "00";
+    }
+}
+
+let countdownInterval;
+
+updateCountdown();
+
+countdownInterval = setInterval(
+    updateCountdown,
+    1000
+);
