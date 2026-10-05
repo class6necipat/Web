@@ -576,3 +576,59 @@ countdownInterval = setInterval(
     updateCountdown,
     1000
 );
+
+const TargetDate = new Date("2026-10-8T07:00:00").getTime();
+
+function updateCountdown() {
+
+    const sekarang = new Date().getTime();
+
+    const selisih = targetDate - sekarang;
+
+    const hari = Math.floor(
+        selisih / (1000 * 60 * 60 * 24)
+    );
+
+    const jam = Math.floor(
+        (selisih / (1000 * 60 * 60)) % 24
+    );
+
+    const menit = Math.floor(
+        (selisih / (1000 * 60)) % 60
+    );
+
+    const detik = Math.floor(
+        (selisih / 1000) % 60
+    );
+
+    document.getElementById("countdown-days").textContent =
+        String(hari).padStart(2, "0");
+
+    document.getElementById("countdown-hours").textContent =
+        String(jam).padStart(2, "0");
+
+    document.getElementById("countdown-minutes").textContent =
+        String(menit).padStart(2, "0");
+
+    document.getElementById("countdown-seconds").textContent =
+        String(detik).padStart(2, "0");
+
+    if (selisih <= 0) {
+
+        clearInterval(countdowninterval);
+
+        document.getElementById("countdown-days").textContent = "00";
+        document.getElementById("countdown-hours").textContent = "00";
+        document.getElementById("countdown-minutes").textContent = "00";
+        document.getElementById("countdown-seconds").textContent = "00";
+    }
+}
+
+let countdowninterval;
+
+updateCountdown();
+
+countdowninterval = setInterval(
+    updateCountdown,
+    1000
+);
