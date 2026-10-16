@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Web Class 6 Necipat" content="Website resmi Kelas VI NECIPAT yang berisi informasi siswa, jadwal, tugas, pengumuman, dan kegiatan kelas kami."
-    <title>Web Kelas VI</title>
+    <meta name="Web Class 6 Necipat"
+        content="Website resmi Kelas VI NECIPAT yang berisi informasi siswa, jadwal, tugas, pengumuman, dan kegiatan kelas kami.">
+    <title>Web Kelas VI Necipat</title>
     <link rel="icon" type="image/jpeg" href="Icon.png">
 
     <link rel="stylesheet" href="style.css">
@@ -126,13 +127,15 @@
 
         <!-- HOME -->
         <section id="home" class="home">
-            <h1>Selamat Datang!</h1>
+            <h2>Selamat Datang!</h2>
 
             <p>
                 Selamat datang di website kelas VI.
                 Di sini anda bisa melihat informasi siswa,
                 jadwal pelajaran, tugas, dan pengumuman kelas.
             </p>
+
+            <!--coundown 1-->
 
             <div class="countdown-widget">
 
@@ -179,6 +182,8 @@
 
             </div>
 
+            <!--coudown 2-->
+
             <div class="countdown-widget">
 
                 <div class="countdown-title">
@@ -194,29 +199,29 @@
 
                     <div>
                         <h2>Countdown</h2>
-                        <p>Pengumpulan Tugas Prakarya</p>
+                        <p>Kegiatan Renang! 🏄‍♂️</p>
                     </div>
                 </div>
 
-                <div class="countdown-time">
+                <div class="countdown-time2">
 
                     <div class="countdown-box">
-                        <strong id="countdown-days">00</strong>
+                        <strong id="countdown-days2">00</strong>
                         <span>Hari</span>
                     </div>
 
                     <div class="countdown-box">
-                        <strong id="countdown-hours">00</strong>
+                        <strong id="countdown-hours2">00</strong>
                         <span>Jam</span>
                     </div>
 
                     <div class="countdown-box">
-                        <strong id="countdown-minutes">00</strong>
+                        <strong id="countdown-minutes2">00</strong>
                         <span>Menit</span>
                     </div>
 
                     <div class="countdown-box">
-                        <strong id="countdown-seconds">00</strong>
+                        <strong id="countdown-seconds2">00</strong>
                         <span>Detik</span>
                     </div>
 
@@ -257,7 +262,7 @@
         <!-- JADWAL -->
         <section id="jadwal">
 
-            <h1>Jadwal Pelajaran</h1>
+            <h2>Jadwal Pelajaran</h2>
 
             <div class="jadwal-container">
 
@@ -323,7 +328,7 @@
         <!-- SISWA -->
         <section id="siswa">
 
-            <h1>Daftar Siswa</h1>
+            <h2>Daftar Siswa</h2>
 
             <div class="siswa">
 
@@ -638,48 +643,100 @@
             </div>
         </div>
 
+        <!--Statistik-->
+        <section class="statistik-section" id="statistik-section">
+            <h2>Statistik</h2>
+
+            <p>Lihatlah Statistik kelas kami agar kalian mengetahui statistik kelas kami!</p>
+            
+            <div class="statistik-grid" id="statistik-grid">
+                <div class="statistik-card" id="statistik-card-siswa">
+                    <h3>Total Siswa</h3>
+                    <p>16</p>
+                    <button class="button-statistik" id="button--siswa">Detail Siswa</button>
+                </div>
+
+                <div class="statistik-card" id="statistik-card-prestasi">
+                    <h3>Total Prestasi</h3>
+                    <p>-</p>
+                    <button class="button-statistik" id="button-prestasi">Detail Prestasi</button>
+                </div>
+
+                <div class="statistik-card" id="statistik-card-tugas">
+                    <h3>Total tugas</h3>
+                    <p>-</p>
+                    <button class="button-statistik" id="button-tugas">Detail Tugas</button>
+                </div>
+
+                <div class="statistik-card" id="statistik-card-kegiatan">
+                    <h3>Total Kegiatan</h3>
+                    <p>-</p>
+                    <button class="button-statistik" id="button-kegiatan">Detail Kegiatan</button>
+                </div>
+            </div>
+
+            <div class="data-lanjutan" id="data-lanjutan">
+                <p>🚧 **Statistik kelas sedang dalam tahap pembuatan.**
+
+                    Kami sedang menyiapkan fitur statistik agar informasi mengenai siswa, prestasi, tugas, dan kegiatan
+                    kelas dapat ditampilkan dengan lebih informatif.
+
+                    Terima kasih atas kesabarannya!
+                </p>
+            </div>
+        </section>
+
         <!-- TUGAS -->
         <section id="tugas">
 
-            <h1>Tugas</h1>
+            <h2>Tugas</h2>
 
             <div class="tugas-card">
-                <p>B.Inggris Hal.15</p>
-            </div>
-
-            <div class="tugas-card">
-                <p>IPAS hal.51 (dilanjut)</p>
-            </div>
-
-            <div class="tugas-card">
-                <p>Matematika Sumatif tengah semester (dilanjut)</p>
-            </div>
-
-            <div class="tugas-card">
-                <p>Membuat Gantungan kunci makrame (Dikumpulkan hari kamis, tanggal 8 Oktober 2026)</p>
+                <p>tidak ada Tugas!</p>
+                <button id="buka-modal-tugas1">Buka</button>
             </div>
 
         </section>
+
+        <div class="modaltugas" id="modaltugas1">
+            <div class="modal-content">
+                <p>Tidak Ada Tugas!</p>
+            </div>
+        </div>
 
 
         <!-- PENGUMUMAN -->
         <section id="pengumuman">
 
-            <h1>Pengumuman</h1>
+            <h2>Pengumuman</h2>
 
             <div class="pengumuman-card">
                 <p>Ulangan Selesai!</p>
-            </>
+                <button id="bukamodalpengumuman1">Buka</button>
+            </div>
 
             <div class="pengumuman-card">
-                <p>Pembaruan Web akan dimulai kembali!>
+                <p>Pembaruan Web akan dimulai kembali!</p>
+                <button id="bukamodalpengumuman2">Buka</button>
             </div>
 
         </section>
 
+        <div class="modalpengumuman1" id="modalpengumuman1">
+            <div class="modal-content">
+                <p>Ulangan selesai!</p>
+            </div>
+        </div>
+
+        <div class="modalpengumuman2" id="modalpengumuman2">
+            <div class="modal-content">
+                <p>Pembaruan Web akan dimulai kembali!</p>
+            </div>
+        </div>
+
         <!--Fun Games-->
         <Section id="fun-games">
-            <h1>Fun games</h1>
+            <h2>Fun games</h2>
 
             <div class="random-picker">
                 <h2 id="judul-RP">Random Picker!</h2>

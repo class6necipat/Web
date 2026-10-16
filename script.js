@@ -392,6 +392,54 @@ modaladibah.addEventListener("click", function (event) {
 
 });
 
+//modal tugas
+ let tombolbukamodaltugas1 = document.getElementById("buka-modal-tugas1")
+ let modaltugas1 = document.getElementById("modaltugas1")
+
+ tombolbukamodaltugas1.addEventListener("click", function(){
+    modaltugas1.classList.add("active")
+ });
+
+ modaltugas1.addEventListener("click", function(event){
+    if (event.target === modaltugas1) {
+
+        modaltugas1.classList.remove("active")
+
+    }
+ });
+
+ //mdal pengumuman
+
+ let tombolbukamodalpengumuman1 = document.getElementById("bukamodalpengumuman1")
+ let modalpengumuman1 = document.getElementById("modalpengumuman1")
+
+ tombolbukamodalpengumuman1.addEventListener("click", function(){
+    modalpengumuman1.classList.add("active")
+ });
+
+ modalpengumuman1.addEventListener("click", function(event){
+    if (event.target === modalpengumuman1) {
+
+        modalpengumuman1.classList.remove("active")
+
+    }
+ });
+
+ let tombolbukamodalpengumuman2 = document.getElementById("bukamodalpengumuman2")
+ let modalpengumuman2 = document.getElementById("modalpengumuman2")
+
+ tombolbukamodalpengumuman2.addEventListener("click", function(){
+    modalpengumuman2.classList.add("active")
+ });
+
+ modalpengumuman2.addEventListener("click", function(event){
+    if (event.target === modalpengumuman2) {
+
+        modalpengumuman2.classList.remove("active")
+
+    }
+ });
+
 // jam digital
 let jamdigital = document.getElementById("jam-digital");
 let tanggaldigital = document.getElementById("tanggal-digital")
@@ -523,7 +571,7 @@ document.addEventListener("click", function (event) {
 
 const targetDate = new Date("2026-12-31T23:59:59").getTime();
 
-function updateCountdown() {
+function updateCountdown1() {
 
     const sekarang = new Date().getTime();
 
@@ -570,65 +618,67 @@ function updateCountdown() {
 
 let countdownInterval;
 
-updateCountdown();
+updateCountdown1();
 
 countdownInterval = setInterval(
-    updateCountdown,
+    updateCountdown1,
     1000
 );
 
-const TargetDate = new Date("2026-10-8T07:00:00").getTime();
+//countdown 2
 
-function updateCountdown() {
 
-    const sekarang = new Date().getTime();
+const targetDate2 = new Date("2026-10-17T07:30:00").getTime();
 
-    const selisih = targetDate - sekarang;
+function updateCountdown2() {
+    const sekarang2 = new Date().getTime();
+    const selisih2 = targetDate2 - sekarang2;
 
-    const hari = Math.floor(
-        selisih / (1000 * 60 * 60 * 24)
-    );
+    if (selisih2 <= 0) {
+        clearInterval(countdownInterval2);
 
-    const jam = Math.floor(
-        (selisih / (1000 * 60 * 60)) % 24
-    );
+        document.getElementById("countdown-days2").textContent = "00";
+        document.getElementById("countdown-hours2").textContent = "00";
+        document.getElementById("countdown-minutes2").textContent = "00";
+        document.getElementById("countdown-seconds2").textContent = "00";
 
-    const menit = Math.floor(
-        (selisih / (1000 * 60)) % 60
-    );
-
-    const detik = Math.floor(
-        (selisih / 1000) % 60
-    );
-
-    document.getElementById("countdown-days").textContent =
-        String(hari).padStart(2, "0");
-
-    document.getElementById("countdown-hours").textContent =
-        String(jam).padStart(2, "0");
-
-    document.getElementById("countdown-minutes").textContent =
-        String(menit).padStart(2, "0");
-
-    document.getElementById("countdown-seconds").textContent =
-        String(detik).padStart(2, "0");
-
-    if (selisih <= 0) {
-
-        clearInterval(countdowninterval);
-
-        document.getElementById("countdown-days").textContent = "00";
-        document.getElementById("countdown-hours").textContent = "00";
-        document.getElementById("countdown-minutes").textContent = "00";
-        document.getElementById("countdown-seconds").textContent = "00";
+        return;
     }
+
+    const hari2 = Math.floor(
+        selisih2 / (1000 * 60 * 60 * 24)
+    );
+
+    const jam2 = Math.floor(
+        (selisih2 / (1000 * 60 * 60)) % 24
+    );
+
+    const menit2 = Math.floor(
+        (selisih2 / (1000 * 60)) % 60
+    );
+
+    const detik2 = Math.floor(
+        (selisih2 / 1000) % 60
+    );
+
+    document.getElementById("countdown-days2").textContent =
+        String(hari2).padStart(2, "0");
+
+    document.getElementById("countdown-hours2").textContent =
+        String(jam2).padStart(2, "0");
+
+    document.getElementById("countdown-minutes2").textContent =
+        String(menit2).padStart(2, "0");
+
+    document.getElementById("countdown-seconds2").textContent =
+        String(detik2).padStart(2, "0");
 }
 
-let countdowninterval;
+let countdownInterval2;
 
-updateCountdown();
+updateCountdown2();
 
-countdowninterval = setInterval(
-    updateCountdown,
+countdownInterval2 = setInterval(
+    updateCountdown2,
     1000
 );

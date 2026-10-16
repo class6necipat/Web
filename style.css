@@ -637,7 +637,7 @@ section:first-of-type {
         12px;
 }
 
-section h1 {
+section > h2 {
     margin-bottom:
         19px;
 
@@ -646,9 +646,9 @@ section h1 {
 
     font-size:
         clamp(
-            24px,
+            20px,
             7.5vw,
-            40px
+            38px
         );
 
     line-height:
@@ -658,7 +658,7 @@ section h1 {
         -0.7px;
 }
 
-section h1::after {
+section > h2::after {
     content: "";
 
     display: block;
@@ -2311,7 +2311,8 @@ a:focus-visible {
     font-size: 9px;
 }
 
-.countdown-time {
+.countdown-time,
+.countdown-time2 {
     display: grid;
 
     grid-template-columns:
@@ -2377,4 +2378,398 @@ a:focus-visible {
         margin-left: 270px;
     }
 
+}
+
+/* =========================================
+   MODAL TUGAS & TOMBOL BUKA
+========================================= */
+
+/* TOMBOL BUKA */
+#buka-modal-tugas1, 
+#bukamodalpengumuman1,
+#bukamodalpengumuman2 {
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+
+    margin: 0;
+    padding: 6px 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    background: #1b2a3a;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    box-shadow: var(--shadow-xs);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#buka-modal-tugas1, #bukamodalpengumuman1, #bukamodalpengumuman2:hover {
+    background: #263b50;
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* OVERLAY */
+.modaltugas,
+.modalpengumuman1,
+.modalpengumuman2 {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* MODAL AKTIF */
+.modaltugas.active,
+.modalpengumuman1.active,
+.modalpengumuman2.active {
+    display: flex;
+    animation: tugasOverlayMasuk 0.2s ease both;
+}
+
+/* KONTEN MODAL */
+.modaltugas .modal-content,
+.modalpengumuman1 .modal-content,
+.modalpengumuman2 .modal-content {
+    position: relative;
+
+    width: min(90vw, 850px);
+    max-height: 85vh;
+
+    padding: 32px;
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-wrap: anywhere;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    /* Ikuti tema website */
+    background: var(--surface);
+    color: var(--text);
+
+    box-shadow: var(--shadow-sm);
+
+    animation: tugasKontenMasuk 0.25s ease both;
+}
+
+/* TEKS MODAL */
+.modaltugas .modal-content p,
+.modalpengumuman1 .modal-content p,
+.modalpengumuman2 .modal-content p {
+    margin: 0;
+
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ANIMASI OVERLAY */
+@keyframes tugasOverlayMasuk {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pengumuman1OverlayMasuk {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pengumuman2OverlayMasuk {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ANIMASI KONTEN */
+@keyframes tugasKontenMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .modaltugas,
+    .modalpengumuman1,
+    .modalpengumuman2 {
+        padding: 14px;
+    }
+
+    .modaltugas .modal-content,
+    .modalpengumuman1 .modal-content,
+    .modalpengumuman2 .modal-content {
+        width: 100%;
+        max-height: 90vh;
+        padding: 22px;
+    }
+
+    #buka-modal-tugas1,
+    #bukamodalpengumuman1,
+    #bukamodalpengumuman2 {
+        right: 10px;
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    #bukamodalpengumuman1,
+    #bukamodalpengumuman2,
+    .modalpengumuman1.active,
+    .modalpengumuman2.active,
+    .modalpengumuman1 .modal-content,
+    .modalpengumuman2 .modal-content {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    #bukapengumuman1,
+    #bukapengumuman2,
+    .modalpengumuman1.active,
+    .modalpengumuman2.active,
+    .modalpengumuman1 .modal-content,
+    .modalpengumuman2 .modal-content {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* =========================
+   STATISTIK KELAS
+========================= */
+
+.statistik-section {
+    padding: 24px 0;
+    scroll-margin-top: 90px;
+}
+
+.statistik-section .pembuka {
+    margin-bottom: 24px;
+}
+
+/* Grid statistik */
+.statistik-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Kartu statistik */
+.statistik-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 22px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xs);
+
+    transition:
+        transform 0.25s var(--ease),
+        box-shadow 0.25s var(--ease),
+        border-color 0.25s var(--ease);
+}
+
+/* Efek hover kartu */
+.statistik-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary);
+}
+
+/* Judul kartu */
+.statistik-card h3 {
+    margin: 0;
+
+    color: var(--heading);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Angka dan data statistik */
+.statistik-card p {
+    margin: 4px 0 8px;
+
+    color: var(--heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Tombol detail */
+.button-statistik {
+    margin-top: auto;
+    padding: 10px 14px;
+
+    color: var(--surface);
+    background: var(--heading);
+
+    border: 1px solid var(--heading);
+    border-radius: var(--radius-sm);
+
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s var(--ease),
+        color 0.2s var(--ease),
+        border-color 0.2s var(--ease),
+        transform 0.2s var(--ease);
+}
+
+/* Hover tombol */
+.button-statistik:hover {
+    color: var(--surface);
+    background: var(--surface-dark);
+    border-color: var(--surface-dark);
+
+    transform: translateY(-2px);
+}
+
+/* Fokus keyboard */
+.button-statistik:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .statistik-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* HP */
+@media (max-width: 480px) {
+    .statistik-section {
+        padding: 18px 0;
+    }
+
+    .statistik-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .statistik-card {
+        padding: 18px;
+    }
+
+    .statistik-card p {
+        font-size: 1.8rem;
+    }
+}
+
+/* Aksesibilitas: mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    .statistik-card,
+    .button-statistik {
+        transition: none;
+    }
+
+    .statistik-card:hover,
+    .button-statistik:hover {
+        transform: none;
+    }
+}
+
+/* ======================================== 
+   Card informasi fitur yang belum tersedia 
+===========================================*/
+.data-lanjutan {
+    padding: 24px;
+    margin-top: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xs);
+
+    text-align: center;
+
+    transition:
+        border-color 0.25s var(--ease),
+        box-shadow 0.25s var(--ease);
+}
+
+.data-lanjutan:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Pesan di dalam card */
+.data-lanjutan p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* HP */
+@media (max-width: 480px) {
+    .data-lanjutan {
+        padding: 18px;
+        margin-top: 16px;
+    }
+
+    .data-lanjutan p {
+        font-size: 0.875rem;
+    }
 }
