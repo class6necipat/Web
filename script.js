@@ -410,35 +410,18 @@ modaladibah.addEventListener("click", function (event) {
 
  //mdal pengumuman
 
- let tombolbukamodalpengumuman1 = document.getElementById("bukamodalpengumuman1")
- let modalpengumuman1 = document.getElementById("modalpengumuman1")
+let tombolpengumuman = document.getElementById("bukamodalpengumuman1")
+let modalpengumuman = document.getElementById("modalpengumuman1")
 
- tombolbukamodalpengumuman1.addEventListener("click", function(){
-    modalpengumuman1.classList.add("active")
- });
+tombolpengumuman.addEventListener("click", function(){
+    modalpengumuman.classList.add("active")
+});
 
- modalpengumuman1.addEventListener("click", function(event){
-    if (event.target === modalpengumuman1) {
-
-        modalpengumuman1.classList.remove("active")
-
+modalpengumuman.addEventListener("click", function(event){
+    if (event.target === modalpengumuman) {
+        modalpengumuman.classList.remove("active")
     }
- });
-
- let tombolbukamodalpengumuman2 = document.getElementById("bukamodalpengumuman2")
- let modalpengumuman2 = document.getElementById("modalpengumuman2")
-
- tombolbukamodalpengumuman2.addEventListener("click", function(){
-    modalpengumuman2.classList.add("active")
- });
-
- modalpengumuman2.addEventListener("click", function(event){
-    if (event.target === modalpengumuman2) {
-
-        modalpengumuman2.classList.remove("active")
-
-    }
- });
+})
 
 // jam digital
 let jamdigital = document.getElementById("jam-digital");
@@ -452,7 +435,6 @@ function updatetimedate() {
     let detik = String(sekarang.getSeconds()).padStart(2, "0");
 
     jamdigital.textContent = jam + ":" + menit + ":" + detik;
-
     let tanggal = sekarang.getDate();
     let bulan = sekarang.getMonth();
     let tahun = sekarang.getFullYear();
@@ -625,60 +607,68 @@ countdownInterval = setInterval(
     1000
 );
 
-//countdown 2
+//statistik
 
+const buttondatalanjutan = document.querySelectorAll("button-statistik")
+const buttonsiswa = document.getElementById("button--siswa")
+const buttonprestasi = document.getElementById("button-prestasi")
+const buttontugas = document.getElementById("button-tugas")
+const buttonkegiatan = document.getElementById("button-kegiatan")
+const grafik = document.getElementById("data-lanjutan")
 
-const targetDate2 = new Date("2026-10-17T07:30:00").getTime();
+buttonsiswa.addEventListener("click", function(){
+    grafik.innerHTML = `
+    <div class="grafik-item">
+        <div class="grafik-label">
+            <span>Laki-laki</span>
+            <span>4 (25%)</span>
+        </div>
 
-function updateCountdown2() {
-    const sekarang2 = new Date().getTime();
-    const selisih2 = targetDate2 - sekarang2;
+        <div class="grafik-track">
+            <div class="grafik-bar grafik-laki"
+                 style="width: 25%;"></div>
+        </div>
+    </div>
+    
+    <div class="grafik-item">
+        <div class="grafik-label">
+            <span>Perempuan</span>
+            <span>12 (75%)</span>
+        </div>
 
-    if (selisih2 <= 0) {
-        clearInterval(countdownInterval2);
+        <div class="grafik-track">
+            <div class="grafik-bar grafik-perempuan"
+                 style="width: 75%;"></div>
+        </div>
+    </div>`
 
-        document.getElementById("countdown-days2").textContent = "00";
-        document.getElementById("countdown-hours2").textContent = "00";
-        document.getElementById("countdown-minutes2").textContent = "00";
-        document.getElementById("countdown-seconds2").textContent = "00";
+    grafik.classList.remove("animasi-ulang");
+    void grafik.offsetWidth;
+    grafik.classList.add("animasi-ulang");
 
-        return;
-    }
+});
 
-    const hari2 = Math.floor(
-        selisih2 / (1000 * 60 * 60 * 24)
-    );
+buttonprestasi.addEventListener("click", function(){
+    grafik.innerHTML = `
+    <h3>Mohon Maaf, Data Belum Tersedia</h3>`
+    grafik.classList.remove("animasi-ulang");
+    void grafik.offsetWidth;
+    grafik.classList.add("animasi-ulang");
+});
 
-    const jam2 = Math.floor(
-        (selisih2 / (1000 * 60 * 60)) % 24
-    );
+buttontugas.addEventListener("click", function(){
+    grafik.innerHTML = `
+    <h3>Mohon Maaf, Data Belum Tersedia</h3>`
+    grafik.classList.remove("animasi-ulang");
+    void grafik.offsetWidth;
+    grafik.classList.add("animasi-ulang");
+});
 
-    const menit2 = Math.floor(
-        (selisih2 / (1000 * 60)) % 60
-    );
+buttonkegiatan.addEventListener("click", function(){
+    grafik.innerHTML = `
+    <h3>Mohon Maaf, Data Belum Tersedia`
 
-    const detik2 = Math.floor(
-        (selisih2 / 1000) % 60
-    );
-
-    document.getElementById("countdown-days2").textContent =
-        String(hari2).padStart(2, "0");
-
-    document.getElementById("countdown-hours2").textContent =
-        String(jam2).padStart(2, "0");
-
-    document.getElementById("countdown-minutes2").textContent =
-        String(menit2).padStart(2, "0");
-
-    document.getElementById("countdown-seconds2").textContent =
-        String(detik2).padStart(2, "0");
-}
-
-let countdownInterval2;
-
-updateCountdown2();
-
-countdownInterval2 = setInterval(
-    updateCountdown2,
-    1000
-);
+    grafik.classList.remove("animasi-ulang");
+    void grafik.offsetWidth;
+    grafik.classList.add("animasi-ulang");
+});
