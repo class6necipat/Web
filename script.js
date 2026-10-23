@@ -607,9 +607,64 @@ countdownInterval = setInterval(
     1000
 );
 
+//countdown 2
+
+const targetDate2 = new Date("2026-10-25T03:00:00");
+
+function UpdateCountdown2() {
+    const sekarang2 = new Date().getTime();
+
+    const selisih2 = targetDate2 - sekarang2
+
+    const hari2 = Math.floor(
+        selisih2 / (1000 * 60 * 60 * 24)
+    );
+
+    const jam2 =  Math.floor(
+        (selisih2 / (1000 * 60 * 60)) % 24
+    );
+
+    const menit2 = Math.floor(
+        (selisih2 / (1000 * 60)) % 60
+    );
+
+    const detik2 = Math.floor(
+        (selisih2 / (1000)) % 60
+    );
+
+    document.getElementById("countdown-days2").textContent = 
+    String(hari2).padStart(2, "0");
+
+    document.getElementById("countdown-hours2").textContent =
+    String(jam2).padStart(2, "0");
+
+    document.getElementById("countdown-minutes2").textContent = 
+    String(menit2).padStart(2, "0");
+
+    document.getElementById("countdown-seconds2").textContent =
+    String(detik2).padStart(2, "0");
+
+    if (selisih2 <= 0) {
+        clearInterval(countdowninterval2);
+
+        document.getElementById("countdown-days2").textContent = "00";
+        document.getElementById("countdown-hours2").textContent = "00";
+        document.getElementById("countdown-minutes2").textContent = "00";
+        document.getElementById("countdown-seconds2").textContent = "00";
+    }
+}
+
+let countdowninterval2;
+
+UpdateCountdown2();
+
+countdowninterval2 = setInterval(
+    UpdateCountdown2,
+    1000
+);
+
 //statistik
 
-const buttondatalanjutan = document.querySelectorAll("button-statistik")
 const buttonsiswa = document.getElementById("button--siswa")
 const buttonprestasi = document.getElementById("button-prestasi")
 const buttontugas = document.getElementById("button-tugas")
@@ -666,7 +721,7 @@ buttontugas.addEventListener("click", function(){
 
 buttonkegiatan.addEventListener("click", function(){
     grafik.innerHTML = `
-    <h3>Mohon Maaf, Data Belum Tersedia`
+    <h3>Mohon Maaf, Data Belum Tersedia</h3>`
 
     grafik.classList.remove("animasi-ulang");
     void grafik.offsetWidth;
